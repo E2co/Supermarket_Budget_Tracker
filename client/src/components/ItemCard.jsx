@@ -1,4 +1,3 @@
-"use client"
 import "../styles/item-card.css"
 
 export default function ItemCard({ item, onRemove }) {

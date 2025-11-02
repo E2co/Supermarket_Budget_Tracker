@@ -1,5 +1,3 @@
-"use client"
-
 import { useState } from "react"
 import ItemForm from "./ItemForm"
 import ItemList from "./ItemList"
