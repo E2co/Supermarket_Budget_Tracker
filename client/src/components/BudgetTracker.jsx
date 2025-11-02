@@ -4,7 +4,7 @@ import ItemList from "./ItemList"
 import BudgetSummary from "./BudgetSummary"
 import "../styles/budget-tracker.css"
 
-const TAX_RATE = 0.15 // 8% tax rate
+const TAX_RATE = 0.15 // 15% tax rate
 
 export default function BudgetTracker() {
   const [items, setItems] = useState([])
