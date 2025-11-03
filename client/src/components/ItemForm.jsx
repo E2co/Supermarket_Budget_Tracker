@@ -1,9 +1,13 @@
+"use client"
+
 import { useState } from "react"
 import "../styles/item-form.css"
 
 export default function ItemForm({ onAddItem }) {
   const [description, setDescription] = useState("")
   const [amount, setAmount] = useState("")
+  const [quantity, setQuantity] = useState(1)
+  /* added quantity state */
   const [isTaxable, setIsTaxable] = useState(false)
 
   const handleSubmit = (e) => {
@@ -17,11 +21,15 @@ export default function ItemForm({ onAddItem }) {
     onAddItem({
       description: description.trim(),
       amount: Number.parseFloat(amount),
+      quantity: Number.parseInt(quantity) || 1,
+      /* included quantity in item data */
       isTaxable,
     })
 
     setDescription("")
     setAmount("")
+    setQuantity(1)
+    /* reset quantity after submit */
     setIsTaxable(false)
   }
 
@@ -50,6 +58,19 @@ export default function ItemForm({ onAddItem }) {
           placeholder="0.00"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
+        />
+      </div>
+
+      <div className="form-group">
+        <label htmlFor="quantity">Quantity</label>
+        <input
+          id="quantity"
+          type="number"
+          min="1"
+          max="999"
+          placeholder="1"
+          value={quantity}
+          onChange={(e) => setQuantity(e.target.value)}
         />
       </div>
 

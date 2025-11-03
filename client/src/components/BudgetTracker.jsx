@@ -1,3 +1,5 @@
+"use client"
+
 import { useState } from "react"
 import ItemForm from "./ItemForm"
 import ItemList from "./ItemList"
@@ -26,10 +28,12 @@ export default function BudgetTracker() {
     let nonTaxableSum = 0
 
     items.forEach((item) => {
+      /* multiply amount by quantity */
+      const itemTotal = (Number.parseFloat(item.amount) || 0) * (item.quantity || 1)
       if (item.isTaxable) {
-        taxableSum += Number.parseFloat(item.amount) || 0
+        taxableSum += itemTotal
       } else {
-        nonTaxableSum += Number.parseFloat(item.amount) || 0
+        nonTaxableSum += itemTotal
       }
     })
 
