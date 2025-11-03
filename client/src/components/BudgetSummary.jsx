@@ -16,7 +16,7 @@ export default function BudgetSummary({ totals, itemCount }) {
       </div>
 
       <div className="summary-item">
-        <span>Tax (8%)</span>
+        <span>Tax (15%)</span>
         <span className="summary-value">${totals.taxAmount.toFixed(2)}</span>
       </div>
 
