@@ -46,6 +46,10 @@
   color: var(--color-gray-600);
 }
 
+.item-card .quantity {
+  color: var(--color-gray-900);
+}
+
 @media (max-width: 768px) {
   .item-list h2 {
     font-size: 1.3rem;
